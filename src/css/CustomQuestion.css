@@ -1,0 +1,95 @@
+.CustomQuestion-question-box {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.CustomQuestion-question-box-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CustomQuestion-label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.CustomQuestion-question-box input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.CustomQuestion-button {
+  background: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-remove {
+  background: #dc3545;
+}
+
+.button-add {
+  background: #28a745;
+}
+
+.button-remove-option {
+  background: #dc3545;
+  color: #ffffff;
+  padding: 5px 8px;
+}
+
+.CustomQuestion-button:hover {
+  background-color: #0056b3;
+}
+
+.button-remove:hover {
+  background-color: #c82333;
+}
+
+.button-add:hover {
+  background-color: #218838;
+}
+
+.button-remove-option:hover {
+  background-color: #c82333;
+}
+
+.CustomQuestion-option-list {
+  margin-top: 10px;
+}
+
+.CustomQuestion-option {
+  width: 65%;
+  margin-bottom: 10px;
+}
+
+.CustomQuestion-option-text {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.CustomQuestion-option-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

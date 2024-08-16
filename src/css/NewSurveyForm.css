@@ -1,0 +1,71 @@
+.NewSurveyForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.NewSurveyForm-Form {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.NewSurveyForm h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.NewSurveyForm-data {
+  margin-bottom: 15px;
+}
+
+.NewSurveyForm-label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.NewSurveyForm-Form input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.NewSurveyForm-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-add {
+  margin-right: 10px;
+}
+
+.btn-create {
+  background-color: #28a745;
+}
+
+.NewSurveyForm-btn:hover {
+  background-color: #0056b3;
+}
+.NewSurveyForm-btn.btn-create:hover {
+  background-color: #218838;
+}

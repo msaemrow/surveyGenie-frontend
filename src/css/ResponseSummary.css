@@ -1,0 +1,137 @@
+.ResponseSummary-container {
+  margin-top: 85px;
+  margin-bottom: 50px;
+}
+
+.ResponseSummary-title {
+  margin-bottom: 10px;
+}
+
+.ResponseSummary-survey-title {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.ResponseSummary-survey-description {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.ResponseSummary-charts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%px;
+}
+
+.ResponseSummary-chart-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 25px;
+  height: 400px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ResponseSummary-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ResponseSummary-individual {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ResponseSummary-individual-response {
+  width: 50%;
+}
+
+.ResponseSummary-chart-title {
+  margin: 5px auto;
+}
+
+.ResponseSummary-table-title {
+  font-weight: lighter;
+}
+
+.ResponseSummary-table {
+  padding: 5px 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  margin-bottom: 1em;
+  overflow-x: auto;
+  display: block;
+  width: 90%;
+}
+
+.ResponseSummary-table-title {
+  text-align: center;
+}
+
+.ResponseSummary-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ResponseSummary-table thead {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.ResponseSummary-table th,
+.ResponseSummary-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  min-width: 75px;
+}
+
+.ResponseSummary-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ResponseSummary-no-responses {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ResponseSummary-sub {
+  font-size: 1.5rem;
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.ResponseSummary-return-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ResponseSummary-return-button:hover {
+  background-color: #0056b3;
+}
+
+.ResponseSummary-return-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+}

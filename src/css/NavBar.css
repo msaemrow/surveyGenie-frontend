@@ -1,0 +1,60 @@
+.NavBar {
+  background-color: black;
+  padding: 10px;
+  height: 55px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.NavBar-title {
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.NavBar-logo {
+  color: orange;
+}
+
+.NavBar-logo:hover {
+  color: blue;
+}
+
+.NavBar-links {
+  margin-right: 20px;
+}
+
+.NavBar-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.NavBar-li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.NavBar-li a {
+  text-decoration: none;
+  color: white;
+}
+
+.NavBar-li a:hover {
+  color: orange;
+}
+
+.NavBar-li:hover {
+  text-decoration: none;
+  color: orange;
+}
+
+.NavLinkItem {
+  text-decoration: none;
+  color: white;
+}

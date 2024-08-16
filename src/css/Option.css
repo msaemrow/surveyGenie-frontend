@@ -1,0 +1,24 @@
+.CustomQuestion-option {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.CustomQuestion-option-text {
+  display: block;
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #333;
+}
+
+.CustomQuestion-option input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}

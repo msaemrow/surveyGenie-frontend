@@ -1,0 +1,24 @@
+.Response-container {
+  border: 2px solid black;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Response-id {
+  margin: 3px;
+}
+
+.Response-completed {
+  margin: 3px;
+}
+
+.Response-question-answer {
+  margin: 3px;
+}
+
+.Response-question-title {
+  font-weight: 700;
+  margin: 3px;
+}
