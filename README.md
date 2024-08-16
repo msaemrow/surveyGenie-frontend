@@ -17,19 +17,11 @@ git clone <repo-url>
 cd surveyGenie_frontend
 ```
 
-- you can skip this step if you already did it for the backend api
-
 2.  Install Dependencies
     Install the necessary dependencies using npm or yarn:
 
 ```bash
 npm install
-```
-
-or
-
-```bash
-yarn install
 ```
 
 3. Environment Variables
