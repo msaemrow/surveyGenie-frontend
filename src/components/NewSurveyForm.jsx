@@ -107,6 +107,7 @@ const NewSurveyForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     let res = await SurveyGenieApi.createSurvey(currentUser.id, formData);
 
     navigate(`/survey/${currentUser.id}/all`);
