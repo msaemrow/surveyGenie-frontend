@@ -67,7 +67,11 @@ function App() {
       } catch (userErr) {
         console.error("Error fetching current user:", userErr);
         setIsLoading(false);
-        return { success: false, message: "Error fetching user data" };
+        return {
+          success: false,
+          message: "Error fetching user data",
+          id: user_id,
+        };
       }
 
       setCurrentUser(userRes);

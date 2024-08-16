@@ -22,7 +22,7 @@ const SignUpForm = ({ signup }) => {
     e.preventDefault();
     let res = await signup(formData);
     if (!res.success) {
-      navigate("/survey/1/all");
+      navigate(`/survey/new`);
     } else {
       navigate("/signup");
     }
