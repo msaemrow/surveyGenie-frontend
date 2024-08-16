@@ -28,9 +28,8 @@ const UpdateProfileForm = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    let res = SurveyGenieApi.updateUser(currentUser.id, formData);
-    console.log("UPDATED USER", res.body);
-    navigate("/");
+    // let res = SurveyGenieApi.updateUser(currentUser.id, formData);
+    // navigate("/");
   }
 
   return (
@@ -95,7 +94,7 @@ const UpdateProfileForm = () => {
           </div>
         ) : null}
         <button className="UpdateProfile-btn" type="submit">
-          Save Changes
+          Save Changes- in development
         </button>
       </form>
     </div>

@@ -44,7 +44,6 @@ const Survey = () => {
       survey_id: id,
       reponses: responses,
     };
-    console.log("Survey Responses", surveyResponse);
     // Need to add logic to acutally submit responses to the database
   };
 
@@ -94,7 +93,7 @@ const Survey = () => {
             />
           ))}
           <button className="Survey-button btn-edit" type="button">
-            Edit Survey
+            Edit Survey - in development
           </button>
         </form>
       </div>

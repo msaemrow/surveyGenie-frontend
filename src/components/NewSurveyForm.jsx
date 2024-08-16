@@ -79,8 +79,6 @@ const NewSurveyForm = () => {
   };
 
   const handleRemoveOption = (question_id, option_choice_id) => {
-    console.log("HANDLE REMOVE Question", question_id);
-    console.log("HANDLE REMOVE Choice", option_choice_id);
     const updatedQuestions = formData.questions.map((question) =>
       question.question_id === question_id
         ? {
@@ -109,10 +107,8 @@ const NewSurveyForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("FORM DATA", formData);
     let res = await SurveyGenieApi.createSurvey(currentUser.id, formData);
-    console.log("RESPONSE", res);
+
     navigate(`/survey/${currentUser.id}/all`);
   };
 

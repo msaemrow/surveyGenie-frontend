@@ -28,8 +28,6 @@ const CustomQuestion = ({
   };
 
   const handleRemoveOption = (choice_id) => {
-    console.log("CHOICE ID", choice_id);
-    console.log("QUESTION ID", id);
     onRemoveOption(choice_id);
   };
 

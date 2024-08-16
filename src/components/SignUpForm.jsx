@@ -21,14 +21,12 @@ const SignUpForm = ({ signup }) => {
   async function handleSubmit(e) {
     e.preventDefault();
     let res = await signup(formData);
-    console.log("Status", res.success);
     if (!res.success) {
       navigate("/survey/1/all");
     } else {
       navigate("/signup");
     }
     setFormData(initialState);
-    console.log(formData);
   }
 
   return (
