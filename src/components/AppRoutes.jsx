@@ -9,6 +9,7 @@ import UpdateProfileForm from "./UpdateProfileForm";
 import ProtectedRoute from "./ProtectedRoute";
 import ResponseSummary from "./ResponseSummary";
 import SurveyPublic from "./SurveyPublic";
+import SurveyCompletionPage from "./SurveyCompletionPage";
 import "../css/AppRoutes.css";
 
 const AppRoutes = ({ signup, login, isLoading }) => {
