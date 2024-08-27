@@ -14,6 +14,7 @@ const SurveyList = () => {
   const [surveys, setSurveys] = useState([]);
   const [error, setError] = useState("");
   const [pageLoading, setPageLoading] = useState(true);
+  const [deleteMsg, setDeleteMsg] = useState("");
 
   useEffect(() => {
     findSurveys();
@@ -81,6 +82,7 @@ const SurveyList = () => {
       <h4 className="SurveyList-subtitle">
         Number of surveys created: {currentUser.num_surveys}
       </h4>
+      {deleteMsg && <p className="SurveyList-delete-msg">{deleteMsg}</p>}
       {surveys.length === 0 ? (
         <h3>No Surveys Found! Time to create one!</h3>
       ) : (

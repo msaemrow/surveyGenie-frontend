@@ -54,6 +54,11 @@
   color: #333;
 }
 
+.SurveyList-delete-msg {
+  text-align: center;
+  color: green;
+}
+
 .SurveyList-link-container {
   background: #ffffff;
   border-radius: 8px;
