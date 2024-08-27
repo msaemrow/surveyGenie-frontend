@@ -39,15 +39,6 @@ const Survey = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const surveyResponse = {
-      survey_id: id,
-      reponses: responses,
-    };
-    // Need to add logic to acutally submit responses to the database
-  };
-
   if (pageLoading) return <Loading />;
 
   if (pageError)
@@ -84,7 +75,7 @@ const Survey = () => {
         </Link>
       </p>
       <div className="Survey-questions-box">
-        <form className="Survey-submission-form" onSubmit={handleSubmit}>
+        <form className="Survey-submission-form">
           {survey.questions.map((question) => (
             <Question
               key={question.id}
@@ -95,9 +86,6 @@ const Survey = () => {
               choices={question.options}
             />
           ))}
-          <button className="Survey-button btn-edit" type="button">
-            Edit Survey - in development
-          </button>
         </form>
       </div>
     </div>

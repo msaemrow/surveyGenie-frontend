@@ -43,7 +43,7 @@ const SurveyPublic = () => {
       responses: responses,
     };
     await SurveyGenieApi.completeSurvey(surveyResponse);
-    navigate(`/`);
+    navigate(`/public/survey/${user_id}/${survey_id}/completed`);
   };
 
   if (pageLoading) return <div>Loading Survey...</div>;
@@ -57,7 +57,7 @@ const SurveyPublic = () => {
   return (
     <div className="Survey">
       <h1 className="Survey-title">{survey.title}</h1>
-      <p className="Survey-description">{survey.description}</p>
+      <p className="Survey-description">{survey.survey_description}</p>
       <div className="Survey-questions-box">
         <form className="Survey-submission-form" onSubmit={handleSubmit}>
           {survey.questions.map((question) => (

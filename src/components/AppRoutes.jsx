@@ -26,6 +26,10 @@ const AppRoutes = ({ signup, login, isLoading }) => {
           path="/public/survey/:user_id/:survey_id"
           element={<SurveyPublic />}
         />
+        <Route
+          path="/public/survey/:user_id/:survey_id/completed"
+          element={<SurveyCompletionPage />}
+        />
 
         {/* Protected Routes */}
         <Route
