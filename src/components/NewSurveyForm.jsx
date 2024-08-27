@@ -45,12 +45,17 @@ const NewSurveyForm = () => {
   };
 
   const handleRemoveQuestion = (id) => {
-    setFormData((data) => ({
-      ...data,
-      questions: data.questions.filter(
-        (question) => question.question_id !== id
-      ),
-    }));
+    const confirmation = window.confirm(
+      "Are you sure you want to delete this question?"
+    );
+    if (confirmation) {
+      setFormData((data) => ({
+        ...data,
+        questions: data.questions.filter(
+          (question) => question.question_id !== id
+        ),
+      }));
+    }
   };
 
   const handleQuestionChange = (id, question_text) => {

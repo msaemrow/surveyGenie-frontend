@@ -35,8 +35,13 @@ const SurveyList = () => {
   }
 
   async function handleClickDelete(survey_id) {
-    await SurveyGenieApi.deleteSurvey(user_id, survey_id);
-    findSurveys();
+    const confirmation = window.confirm(
+      "Are you sure you want to delete this survey?"
+    );
+    if (confirmation) {
+      await SurveyGenieApi.deleteSurvey(user_id, survey_id);
+      findSurveys();
+    }
   }
 
   if (error === "Unauthorized") {
