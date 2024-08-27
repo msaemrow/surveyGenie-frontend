@@ -5,6 +5,7 @@ import SurveyGenieApi from "../api/api";
 import { Link } from "react-router-dom";
 import "../css/SurveyList.css";
 import Unauthorized from "./Unauthorized";
+import Loading from "./Loading";
 
 const SurveyList = () => {
   const { user_id } = useParams();
