@@ -20,13 +20,29 @@ const SignUpForm = ({ signup }) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    let res = await signup(formData);
-    if (!res.success) {
-      navigate(`/survey/new`);
-    } else {
-      navigate("/signup");
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters");
+      setFormData((data) => ({ ...data, password: "" }));
+      return;
     }
-    setFormData(initialState);
+    let res = await signup(formData);
+    if (res.success) {
+      setFormData(initialState);
+      navigate("/survey/1/all");
+    } else {
+      if (
+        res.err.response.data.error.message[0] ===
+        'instance.email does not conform to the "email" format'
+      ) {
+        setError("Please enter a valid email with the @ symbol");
+      } else {
+        setError(
+          res.err.response.data.error.message ||
+            "Error creating account. Please try again."
+        );
+      }
+      setFormData((data) => ({ ...data, password: "" }));
+    }
   }
 
   return (
