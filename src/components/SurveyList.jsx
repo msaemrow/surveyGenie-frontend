@@ -45,7 +45,7 @@ const SurveyList = () => {
       "Are you sure you want to delete this survey?"
     );
     if (confirmation) {
-      setDeleteMsg(`Deleted survey with id of ${survey_id}`);
+      setDeleteMsg(`Successfully deleted survey`);
       await SurveyGenieApi.deleteSurvey(user_id, survey_id);
       findSurveys();
     }
