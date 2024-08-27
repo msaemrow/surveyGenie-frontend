@@ -123,10 +123,9 @@ const ResponseSummary = () => {
   if (tableData.length === 0 && chartData.length === 0) {
     return (
       <div>
-        <h1 className="ResponseSummary-no-responses">Survey Responses</h1>
-        <h3 className="ResponseSummary-subtitle">
+        <h1 className="ResponseSummary-subtitle">
           No data found for this survey!
-        </h3>
+        </h1>
         <button
           type="button"
           className="ResponseSummary-return-button"
