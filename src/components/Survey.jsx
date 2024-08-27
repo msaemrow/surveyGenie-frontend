@@ -5,6 +5,7 @@ import SurveyGenieApi from "../api/api";
 import "../css/Survey.css";
 import Question from "./Question";
 import UserContext from "./UserContext";
+import Loading from "./Loading";
 
 const Survey = () => {
   const { user_id, survey_id } = useParams();
@@ -47,7 +48,7 @@ const Survey = () => {
     // Need to add logic to acutally submit responses to the database
   };
 
-  if (pageLoading) return <div>Loading Survey...</div>;
+  if (pageLoading) return <Loading />;
   if (pageError)
     return (
       <div>
@@ -65,6 +66,7 @@ const Survey = () => {
             onClick={() =>
               navigate(`/survey/${currentUser.id}/${survey_id}/summary`)
             }
+            className="Survey-results-btn"
           >
             View Results
           </button>
