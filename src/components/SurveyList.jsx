@@ -13,6 +13,7 @@ const SurveyList = () => {
 
   const [surveys, setSurveys] = useState([]);
   const [error, setError] = useState("");
+  const [pageLoading, setPageLoading] = useState(true);
 
   useEffect(() => {
     findSurveys();
@@ -23,7 +24,9 @@ const SurveyList = () => {
       let surveyRes = await SurveyGenieApi.getAllSurveys(user_id);
       setSurveys(surveyRes);
       setError("");
+      setPageLoading(false);
     } catch (err) {
+      setPageLoading(false);
       const status = err.response ? err.response.status : 500;
       const message =
         err.response?.data?.error?.message || "An unknown error occurred";
@@ -53,6 +56,8 @@ const SurveyList = () => {
   if (error === "Unauthorized") {
     return <Unauthorized />;
   }
+
+  if (pageLoading) return <Loading />;
 
   if (surveys.length === 0)
     return (

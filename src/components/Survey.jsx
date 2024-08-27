@@ -49,6 +49,7 @@ const Survey = () => {
   };
 
   if (pageLoading) return <Loading />;
+
   if (pageError)
     return (
       <div>

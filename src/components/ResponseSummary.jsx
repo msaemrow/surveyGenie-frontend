@@ -3,6 +3,7 @@ import SurveyGenieApi from "../api/api";
 import SimpleBarChart from "./SimpleBarChart";
 import { useParams, useNavigate } from "react-router";
 import UserContext from "./UserContext";
+import Loading from "./Loading";
 import "../css/ResponseSummary.css";
 
 function formatTimestamp(timestamp) {
@@ -26,6 +27,7 @@ const ResponseSummary = () => {
   const [tableData, setTableData] = useState([]);
   const [tableHeaders, setTableHeaders] = useState([]);
   const [survey, setSurvey] = useState([]);
+  const [pageLoading, setPageLoading] = useState(true);
 
   useEffect(() => {
     findResponseData();
@@ -40,6 +42,7 @@ const ResponseSummary = () => {
       setTableData(tableData);
       setTableHeaders(headers);
     }
+    setPageLoading(false);
   }
 
   async function getSurveyInfo() {
@@ -114,6 +117,8 @@ const ResponseSummary = () => {
       console.error("No current user or user ID found.");
     }
   }
+
+  if (pageLoading) return <Loading />;
 
   if (tableData.length === 0 && chartData.length === 0) {
     return (

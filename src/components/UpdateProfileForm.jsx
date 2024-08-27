@@ -5,13 +5,12 @@ import "../css/UpdateProfileForm.css";
 import SurveyGenieApi from "../api/api";
 
 const UpdateProfileForm = () => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
 
   let initialState = {
     email: currentUser.email || "",
     first_name: currentUser.first_name || "",
     last_name: currentUser.last_name || "",
-    password: "",
   };
   const [formData, setFormData] = useState(initialState);
   const [formErrors, setFormErrors] = useState([]);
@@ -27,9 +26,32 @@ const UpdateProfileForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setFormErrors([]);
+    try {
+      const updatedUser = await SurveyGenieApi.updateUser(
+        currentUser.id,
+        formData
+      );
 
-    // let res = SurveyGenieApi.updateUser(currentUser.id, formData);
-    // navigate("/");
+      setCurrentUser(updatedUser);
+
+      navigate(`/survey/${currentUser.id}/all`);
+    } catch (err) {
+      if (
+        err.response.data.error.message ===
+        'duplicate key value violates unique constraint "users_email_key"'
+      ) {
+        setFormErrors(["Email already in use. Please select another"]);
+      } else if (
+        err.response &&
+        err.response.data &&
+        err.response.data.errors
+      ) {
+        setFormErrors(err.response.data.errors);
+      } else {
+        setFormErrors([err.message]);
+      }
+    }
   }
 
   return (
@@ -73,19 +95,6 @@ const UpdateProfileForm = () => {
           />
         </div>
 
-        <div className="UpdateProfile-data">
-          <label className="UpdateProfile-label" htmlFor="password">
-            Password:{" "}
-          </label>
-          <input
-            type="password"
-            className="UpdateProfile-input"
-            name="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
         {formErrors.length ? (
           <div>
             {formErrors.map((error) => (
@@ -94,7 +103,7 @@ const UpdateProfileForm = () => {
           </div>
         ) : null}
         <button className="UpdateProfile-btn" type="submit">
-          Save Changes- in development
+          Save Changes
         </button>
       </form>
     </div>
