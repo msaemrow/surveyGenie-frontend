@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import UserContext from "./UserContext";
 import SurveyGenieApi from "../api/api";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import Unauthorized from "./Unauthorized";
 const SurveyList = () => {
   const { user_id } = useParams();
   const { currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const [surveys, setSurveys] = useState([]);
   const [error, setError] = useState("");
@@ -44,15 +45,28 @@ const SurveyList = () => {
     }
   }
 
+  function handleClickCreateSurvey(e) {
+    e.preventDefault();
+    navigate(`/survey-new`);
+  }
+
   if (error === "Unauthorized") {
     return <Unauthorized />;
   }
 
   if (surveys.length === 0)
     return (
-      <div>
-        <h1 className="SurveyList-title">All Surveys</h1>
-        <h3>No Surveys Found! Time to create one!</h3>
+      <div className="SurveyList-div-no-surveys">
+        <h1 className="SurveyList-no-surveys">
+          No Surveys Found! Time to create one!
+        </h1>
+        <button
+          type="button"
+          onClick={handleClickCreateSurvey}
+          className="SurveyList-create-survey-btn"
+        >
+          Create survey!
+        </button>
       </div>
     );
 
