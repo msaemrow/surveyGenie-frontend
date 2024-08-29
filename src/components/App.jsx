@@ -47,6 +47,7 @@ function App() {
       let userRes;
       try {
         userRes = await SurveyGenieApi.getCurrentUser(user_id);
+        console.log("TESTING APP.JSX signup fn", userRes);
       } catch (userErr) {
         console.error("Error fetching current user:", userErr);
         setIsLoading(false);
@@ -56,7 +57,7 @@ function App() {
           id: user_id,
         };
       }
-
+      console.log("USER RES OBJECT OUTSIDE TRY BLOCK", userRes);
       setCurrentUser(userRes);
       return { success: true, user: userRes };
     } catch (err) {
