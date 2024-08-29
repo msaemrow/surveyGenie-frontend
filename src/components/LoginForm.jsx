@@ -20,6 +20,7 @@ const LoginForm = ({ login, isLoading }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await login(formData);
+    console.log("LOGIN: ", res);
     if (res.success && res.user) {
       while (isLoading) {
         await new Promise((resolve) => setTimeout(resolve, 50));
@@ -44,6 +45,7 @@ const LoginForm = ({ login, isLoading }) => {
             className="LoginForm-input"
             id="email"
             name="email"
+            type="email"
             value={formData.email}
             onChange={handleChange}
             required

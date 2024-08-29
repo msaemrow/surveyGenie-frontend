@@ -26,6 +26,7 @@ const SignUpForm = ({ signup }) => {
       return;
     }
     let res = await signup(formData);
+    console.log("SIGNUP: ", res);
     if (res.success) {
       setFormData(initialState);
       navigate("/survey/1/all");
@@ -56,6 +57,7 @@ const SignUpForm = ({ signup }) => {
           <input
             className="SignUpForm-input"
             name="email"
+            type="email"
             id="email"
             value={formData.email}
             onChange={handleChange}
