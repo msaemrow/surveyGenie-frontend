@@ -46,7 +46,7 @@ function App() {
 
       let userRes;
       try {
-        let userRes = await SurveyGenieApi.getCurrentUser(user_id);
+        userRes = await SurveyGenieApi.getCurrentUser(user_id);
       } catch (userErr) {
         console.error("Error fetching current user:", userErr);
         setIsLoading(false);
