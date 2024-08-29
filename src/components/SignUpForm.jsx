@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "../css/SignUpForm.css";
 
-const SignUpForm = ({ signup }) => {
+const SignUpForm = ({ signup, isLoading }) => {
   const navigate = useNavigate();
   let initialState = {
     password: "",
@@ -27,9 +27,12 @@ const SignUpForm = ({ signup }) => {
     }
     let res = await signup(formData);
     console.log("SIGNUP: ", res);
-    if (res.success) {
+    if (res.success && res.user) {
+      while (isLoading) {
+        await new Promise((resolve) => setTimeout(resolve, 50));
+      }
       setFormData(initialState);
-      navigate("/survey/1/all");
+      navigate(`survey/${res.user.id}/all`);
     } else {
       if (
         res.err.response.data.error.message[0] ===

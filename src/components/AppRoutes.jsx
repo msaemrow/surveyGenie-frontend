@@ -22,7 +22,10 @@ const AppRoutes = ({ signup, login, isLoading }) => {
           path="/login"
           element={<LoginForm login={login} isLoading={isLoading} />}
         />
-        <Route path="/signup" element={<SignUpForm signup={signup} />} />
+        <Route
+          path="/signup"
+          element={<SignUpForm signup={signup} isLoading={isLoading} />}
+        />
         <Route
           path="/public/survey/:user_id/:survey_id"
           element={<SurveyPublic />}
