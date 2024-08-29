@@ -32,7 +32,7 @@ const SignUpForm = ({ signup, isLoading }) => {
         await new Promise((resolve) => setTimeout(resolve, 50));
       }
       console.log("USER ID", res.user.id);
-      navigate(`survey/${res.user.id}/all`);
+      navigate(`/survey/${res.user.id}/all`);
     } else {
       if (
         res.err.response.data.error.message[0] ===
